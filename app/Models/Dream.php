@@ -4,9 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Laravel\Scout\Searchable;
 
 class Dream extends Model
 {
+    use Searchable;
+
     /**
      * The attributes that should be cast.
      *
@@ -22,6 +25,20 @@ class Dream extends Model
     public function location()
     {
         return $this->belongsTo(Location::class);
+    }
+
+    /**
+     * Get the indexable data array for the model.
+     *
+     * @return array
+     */
+    public function toSearchableArray()
+    {
+        return [
+            'id' => $this->id,
+            'description' => $this->tagless_description,
+            'location' => $this->location ? $this->location->name : null,
+        ];
     }
 
     /**
