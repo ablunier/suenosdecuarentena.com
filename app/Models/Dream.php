@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Dream extends Model
 {
@@ -21,5 +22,21 @@ class Dream extends Model
     public function location()
     {
         return $this->belongsTo(Location::class);
+    }
+
+    /**
+     * @return string
+     */
+    public function getTaglessDescriptionAttribute()
+    {
+        return strip_tags($this->description);
+    }
+
+    /**
+     * @return string
+     */
+    public function getHintAttribute()
+    {
+        return Str::limit($this->tagless_description, 50);
     }
 }
