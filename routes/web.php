@@ -18,7 +18,7 @@ Route::get('/random', [
     'uses' => 'DreamsController@random'
 ]);
 
-Route::get('/item/nr-{id}', [
+Route::get('/sueno/nr-{id}', [
     'as' => 'dreams.show',
     'uses' => 'DreamsController@show'
 ]);

@@ -28,6 +28,17 @@ class Dream extends Model
     }
 
     /**
+     * Scope a query to only include popular users.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopePublished($query)
+    {
+        return $query->where('published', true);
+    }
+
+    /**
      * Get the indexable data array for the model.
      *
      * @return array
