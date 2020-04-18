@@ -32,14 +32,21 @@ class DreamsController extends Controller
         return redirect()->route('dreams.show', ['id' => $randomDream->id]);
     }
 
-    public function show()
+    /**
+     * @param string $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function show($id)
     {
-
+        return view('web.pages.dreams.show');
     }
 
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function create()
     {
-
+        return view('web.pages.dreams.create');
     }
 
     public function post()
