@@ -19,12 +19,15 @@ class MainController extends Controller
         return view('web.pages.homepage', compact('dreams'));
     }
 
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function about()
     {
-
+        return view('web.pages.text');
     }
 
-    public function colophon()
+    public function legal()
     {
 
     }

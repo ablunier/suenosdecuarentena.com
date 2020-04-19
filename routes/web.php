@@ -38,7 +38,7 @@ Route::get('/acerca-de', [
     'uses' => 'MainController@about'
 ]);
 
-Route::get('/colofon', [
-    'as' => 'colophon',
-    'uses' => 'MainController@colophon'
+Route::get('/legal', [
+    'as' => 'legal',
+    'uses' => 'MainController@legal'
 ]);

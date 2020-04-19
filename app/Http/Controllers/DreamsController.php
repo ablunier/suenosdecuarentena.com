@@ -38,7 +38,11 @@ class DreamsController extends Controller
      */
     public function show($id)
     {
-        return view('web.pages.dreams.show');
+        $dream = Dream::published()
+            ->find($id)
+            ->firstOrFail();
+
+        return view('web.pages.dreams.show', compact('dream'));
     }
 
     /**
