@@ -2,22 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateDreamRequest;
 use App\Models\Dream;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class DreamsController extends Controller
 {
     /**
      * @param Request $request
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function search(Request $request)
     {
-        $dreams = Dream::published()
-            ->orderBy('dreamed_on', 'DESC')
-            ->paginate();
+        if (! $request->has('q') || trim($request->get('q')) === '') {
+            return redirect()->route('homepage');
+        }
 
-        return view('web.pages.dreams.search', compact('dreams'));
+        $dreams = Dream::search(trim($request->get('q')))
+            ->where('published', true)
+            ->orderBy('dreamed_on', 'DESC')
+            ->paginate(1);
+
+        $dreams->withQueryString();
+
+        return view('web.pages.dreams.search-results', compact('dreams'));
     }
 
     /**
@@ -53,8 +62,30 @@ class DreamsController extends Controller
         return view('web.pages.dreams.create');
     }
 
-    public function post()
+    /**
+     * @param CreateDreamRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function post(CreateDreamRequest $request)
     {
+        $dream = new Dream();
+        $dream->owner_name = $request->get('owner_name');
+        $dream->raw_location = $request->get('location');
+        $dream->dreamed_on = Carbon::createFromFormat('Y-m-d', $request->get('date'));
+        $dream->description = $request->get('description');
+        $dream->reviewed = false;
+        $dream->published = false;
 
+        $dream->save();
+
+        return redirect()->route('dreams.sent');
+    }
+
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function sent()
+    {
+        return view('web.pages.dreams.sent');
     }
 }

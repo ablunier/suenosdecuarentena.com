@@ -14,6 +14,8 @@
         @endif
         @if ($dream->owner_name)
             <span class="dream-author">{{ $dream->owner_name }}</span>
+        @else
+            <span class="dream-author">Anónima/o</span>
         @endif
 
         <div class="dream-body">
@@ -24,4 +26,8 @@
     <div class="btn-wrapper">
         <a class="btn" href="{{ route('dreams.create') }}">Enviar un sueño</a>
     </div>
+
+    <br />
+
+    <img class="img-responsive fadeIn wow img-main" src="{{ asset('img/suenosdecuarentena.png') }}">
 @endsection

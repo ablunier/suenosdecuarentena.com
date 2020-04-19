@@ -33,6 +33,11 @@ Route::post('/enviar/validar', [
     'uses' => 'DreamsController@post'
 ]);
 
+Route::get('/enviar/gracias', [
+    'as' => 'dreams.sent',
+    'uses' => 'DreamsController@sent'
+]);
+
 Route::get('/acerca-de', [
     'as' => 'about',
     'uses' => 'MainController@about'

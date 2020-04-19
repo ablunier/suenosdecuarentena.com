@@ -8,6 +8,8 @@
         @endif
         @if ($dream->owner_name)
             <span class="dream-author">{{ $dream->owner_name }}</span>
+        @else
+            <span class="dream-author">Anónima/o</span>
         @endif
 
         <div class="dream-body">

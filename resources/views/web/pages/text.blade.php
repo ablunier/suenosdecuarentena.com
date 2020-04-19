@@ -12,8 +12,12 @@
             </article>
 
             <div class="btn-wrapper">
-                <a class="btn" href="#">Enviar un sueño</a>
+                <a class="btn" href="{{ route('dreams.create') }}">Enviar un sueño</a>
             </div>
+
+            <br />
+
+            <img class="img-responsive fadeIn wow img-main" src="{{ asset('img/suenosdecuarentena.png') }}">
         </div>
     </div>
 @endsection

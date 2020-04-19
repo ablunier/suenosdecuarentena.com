@@ -22,7 +22,7 @@ class CreateLocationsTable extends Migration
         });
 
         Schema::table('dreams', function (Blueprint $table) {
-            $table->unsignedBigInteger('location_id');
+            $table->unsignedBigInteger('location_id')->nullable();
 
             $table->foreign('location_id')
                 ->references('id')->on('locations');

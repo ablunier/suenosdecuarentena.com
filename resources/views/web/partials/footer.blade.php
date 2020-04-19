@@ -7,7 +7,7 @@
             <div class="col-md-5 col-sm-6 col-xs-6">
                 <ul class="menu-list-footer">
                     <li><a href="{{ route('about') }}">Qué es</a></li>
-                    <li><a href="">Aviso legal</a></li>
+                    <li><a href="">Ver en galego</a></li>
                 </ul>
             </div>
         </div>
