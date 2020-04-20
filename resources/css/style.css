@@ -196,6 +196,7 @@ ul {
 
 .at-dream .dream-body {
     color: black;
+    margin-top: 1rem;
 }
 
 .at-dream .dream-date {
@@ -380,6 +381,10 @@ ul {
 
 .ml-dream .dream-author::before {
     content: '| ';
+}
+
+.ml-dream .dream-body {
+    margin-top: 1rem;
 }
 
 /* ------text---------*/
