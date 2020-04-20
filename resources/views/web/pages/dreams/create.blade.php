@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="description-textarea"></label>
+                    <label for="description-textarea">{{ __('messages.dream-description') }}</label>
                     <textarea name="description" class="form-control" id="description-textarea" required></textarea>
                 </div>
 
