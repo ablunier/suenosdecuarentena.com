@@ -14,5 +14,6 @@ return [
     'dream-location' => 'Localidad donde estás confinadx',
     'dream-date' => 'Fecha aproximada, aquí todxs hemos perdido la noción del tiempo',
     'dream-description' => 'A ver, qué soñaste?',
-    'no-results' => 'No hay sueños de lo que buscas, ¡quizá deberías compartir el tuyo!'
+    'no-results' => 'No hay sueños de lo que buscas, ¡quizá deberías compartir el tuyo!',
+    'sent-feedback' => '¡Gracias por compartir tu sueño! Lo revisaremos y publicaremos lo antes posible.',
 ];

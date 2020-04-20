@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Dream;
+use App\Models\Text;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -24,6 +25,8 @@ class MainController extends Controller
      */
     public function about()
     {
-        return view('web.pages.text');
+        $text = Text::where('key', 'about')->firstOrFail();
+
+        return view('web.pages.text', compact('text'));
     }
 }
