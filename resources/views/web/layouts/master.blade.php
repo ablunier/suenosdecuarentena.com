@@ -9,15 +9,15 @@
 
     <meta property="og:title" content="{{ __('messages.name') }}" />
     <meta property="og:url" content="{{ Request::url() }}">
-    <meta name="image" content="{{ asset('img/share.jpg') }}" />
-    <meta property="og:image" content="{{ asset('img/share.jpg') }}" />
+    <meta name="image" content="{{ asset('img/share-'.app()->getLocale().'.jpg') }}" />
+    <meta property="og:image" content="{{ asset('img/share-'.app()->getLocale().'.jpg') }}" />
     <meta property="og:description" content="@yield('description')">
-    <link rel="image_src" href="{{ asset('img/share.jpg') }}" />
+    <link rel="image_src" href="{{ asset('img/share-'.app()->getLocale().'.jpg') }}" />
     <meta property="og:type" content="website">
 
     <meta name="twitter:card" content="photo" />
     <meta name="twitter:title" content="{{ __('messages.name') }}" />
-    <meta name="twitter:image" content="{{ asset('img/share.jpg') }}" />
+    <meta name="twitter:image" content="{{ asset('img/share-'.app()->getLocale().'.jpg') }}" />
 
     <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('apple-icon-57x57.png') }}">
     <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('apple-icon-60x60.png') }}">
