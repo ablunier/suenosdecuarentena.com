@@ -8,7 +8,7 @@ Route::get('/', [
     'uses' => 'MainController@homepage'
 ]);
 
-Route::get('/buscar', [
+Route::get(LaravelLocalization::transRoute('routes.dreams.search'), [
     'as' => 'dreams.search',
     'uses' => 'DreamsController@search'
 ]);
@@ -18,32 +18,27 @@ Route::get('/random', [
     'uses' => 'DreamsController@random'
 ]);
 
-Route::get('/sueno/nr-{id}', [
+Route::get(LaravelLocalization::transRoute('routes.dreams.show'), [
     'as' => 'dreams.show',
     'uses' => 'DreamsController@show'
 ]);
 
-Route::get('/enviar', [
+Route::get(LaravelLocalization::transRoute('routes.dreams.create'), [
     'as' => 'dreams.create',
     'uses' => 'DreamsController@create'
 ]);
 
-Route::post('/enviar/validar', [
+Route::post(LaravelLocalization::transRoute('routes.dreams.post'), [
     'as' => 'dreams.post',
     'uses' => 'DreamsController@post'
 ]);
 
-Route::get('/enviar/gracias', [
+Route::get(LaravelLocalization::transRoute('routes.dreams.sent'), [
     'as' => 'dreams.sent',
     'uses' => 'DreamsController@sent'
 ]);
 
-Route::get('/acerca-de', [
+Route::get(LaravelLocalization::transRoute('routes.about'), [
     'as' => 'about',
     'uses' => 'MainController@about'
-]);
-
-Route::get('/legal', [
-    'as' => 'legal',
-    'uses' => 'MainController@legal'
 ]);

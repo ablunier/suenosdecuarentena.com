@@ -7,7 +7,11 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <ul class="menu-list-footer">
                     <li><a href="{{ route('about') }}">{{ __('messages.about') }}</a></li>
-                    <li><a href="">Ver en galego</a></li>
+                    <li>
+                        <a href="{{ $changeLangLink }}">
+                            {{ $changeLangText }}
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
