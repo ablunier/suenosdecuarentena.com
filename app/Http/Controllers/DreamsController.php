@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateDreamRequest;
 use App\Models\Dream;
+use App\Models\Text;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -59,7 +60,9 @@ class DreamsController extends Controller
      */
     public function create()
     {
-        return view('web.pages.dreams.create');
+        $legalText = Text::where('key', 'legal-form')->firstOrFail();
+
+        return view('web.pages.dreams.create', compact('legalText'));
     }
 
     /**

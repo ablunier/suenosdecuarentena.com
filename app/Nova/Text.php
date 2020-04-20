@@ -46,6 +46,7 @@ class Text extends Resource
 
             Select::make('Key')->options([
                 'about' => 'About',
+                'legal-form' => 'Legal form'
             ])->displayUsingLabels()->rules('required'),
 
             Trix::make('Content es')

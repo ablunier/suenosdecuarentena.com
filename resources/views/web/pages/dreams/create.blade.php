@@ -34,8 +34,10 @@
 
                 <div class="form-check">
                     <input type="checkbox" name="legal" class="form-check-input" id="legal-input" required>
-                    <label class="form-check-label" for="legal-input">Aunque sea en sueños, acepto que lo que envío sólo será publicado con previa revisión para anonimizar lo compartido</label>
+                    <label class="form-check-label" for="legal-input">{{ __('messages.dream-legal') }}</label>
                 </div>
+
+                <p>{!! $legalText->getAttribute('content_'.app()->getLocale()) !!}</p>
 
                 <button type="submit" class="btn">{{ __('messages.send-dream') }}</button>
             </form>

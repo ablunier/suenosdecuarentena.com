@@ -14,6 +14,7 @@ return [
     'dream-location' => 'Localidade, cidade ou país onde estás confinadx',
     'dream-date' => 'Data aproximada, aquí todxs perdemos a noción do tempo',
     'dream-description' => 'A ver, que soñaches?',
+    'dream-legal' => 'Acepto as seguintes condicións de tratamento dos datos que envío',
     'no-results' => 'Non hai soños do que buscas, se cadra deberías compartir o teu!',
     'sent-feedback' => 'Grazas por compartir o teu soño! Publicarémolo o antes posible. Sigue soñando así de ben, e volve contárnolo cando queiras. Ánimo que xa queda unha noite menos!',
 ];
