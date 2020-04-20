@@ -22,7 +22,7 @@ class DreamsController extends Controller
         $dreams = Dream::search(trim($request->get('q')))
             ->where('published', true)
             ->orderBy('dreamed_on', 'DESC')
-            ->paginate(1);
+            ->paginate();
 
         $dreams->withQueryString();
 
@@ -48,7 +48,7 @@ class DreamsController extends Controller
     public function show($id)
     {
         $dream = Dream::published()
-            ->find($id)
+            ->where('id', $id)
             ->firstOrFail();
 
         return view('web.pages.dreams.show', compact('dream'));

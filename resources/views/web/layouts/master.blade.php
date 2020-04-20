@@ -1,17 +1,19 @@
 <!DOCTYPE HTML>
-<html lang="es">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = yes">
 
     <title>Sueños de cuarentena</title>
+    <meta name="description" content="@yield('description')">
 
-    <meta property="og:site_name" content="Sueños de cuarentena" />
-    <meta name="description" content="Sueños de cuarentena">
+    <meta property="og:title" content="Sueños de cuarentena" />
+    <meta property="og:url" content="{{ Request::url() }}">
     <meta name="image" content="{{ asset('img/share.jpg') }}" />
     <meta property="og:image" content="{{ asset('img/share.jpg') }}" />
-    <meta property="og:description" content="Sueños de cuarentena">
+    <meta property="og:description" content="@yield('description')">
     <link rel="image_src" href="{{ asset('img/share.jpg') }}" />
+    <meta property="og:type" content="website">
 
     <meta name="twitter:card" content="photo" />
     <meta name="twitter:title" content="Sueños de cuarentena" />
@@ -36,10 +38,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/normalize.css') }}" type="text/css" media="screen">
-    <link rel="stylesheet" href="{{ asset('css/flexboxgrid.css') }}" type="text/css" media="screen">
-    <link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
     <div class="wrapper">

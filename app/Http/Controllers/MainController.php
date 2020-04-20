@@ -14,7 +14,7 @@ class MainController extends Controller
     {
         $dreams = Dream::published()
             ->orderBy('dreamed_on', 'DESC')
-            ->paginate(5);
+            ->paginate(10);
 
         return view('web.pages.homepage', compact('dreams'));
     }
@@ -25,10 +25,5 @@ class MainController extends Controller
     public function about()
     {
         return view('web.pages.text');
-    }
-
-    public function legal()
-    {
-
     }
 }

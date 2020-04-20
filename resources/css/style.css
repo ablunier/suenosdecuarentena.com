@@ -397,7 +397,8 @@ ul {
     display: inline-block;
 }
 
-.pagination-list li a {
+.pagination-list li a,
+.pagination-list li span {
     display: inline-block;
     padding: .5rem .75rem;
     border: 1px solid #20efc8;
@@ -410,6 +411,30 @@ ul {
     background: #20efc8;
     color: black;
 }
+
+.pagination-list li.active span {
+    background: #20efc8;
+    color: black;
+}
+
+.pagination-list li.active span:hover {
+    background: #20efc8;
+    color: black;
+}
+
+.pagination-list li.disabled span {
+    background: #dde6e6;
+    border: 1px solid #dde6e6;
+    color: #a3b0b0;
+    cursor: not-allowed;
+}
+
+.pagination-list li.disabled span:hover {
+    background: #dde6e6;
+    border: 1px solid #dde6e6;
+    color: #a3b0b0;
+}
+
 
 
 
@@ -449,4 +474,8 @@ ul {
     .search-input {
         margin-bottom: 0;
     }
+}
+
+.has-margin-top {
+    margin-top: 2rem;
 }

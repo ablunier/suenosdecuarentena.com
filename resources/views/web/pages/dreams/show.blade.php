@@ -1,5 +1,7 @@
 @extends('web.layouts.master')
 
+@section('description', \Illuminate\Support\Str::limit($dream->tagless_description, 80))
+
 @section('header')
     @include('web.partials.header-simple')
 @endsection
@@ -15,7 +17,7 @@
         @if ($dream->owner_name)
             <span class="dream-author">{{ $dream->owner_name }}</span>
         @else
-            <span class="dream-author">Anónima/o</span>
+            <span class="dream-author">Anónimao</span>
         @endif
 
         <div class="dream-body">
@@ -23,11 +25,11 @@
         </div>
     </article>
 
-    <div class="btn-wrapper">
-        <a class="btn" href="{{ route('dreams.create') }}">Enviar un sueño</a>
-    </div>
-
-    <br />
+    @include('web.partials.search-form')
 
     <img class="img-responsive fadeIn wow img-main" src="{{ asset('img/suenosdecuarentena.png') }}">
+
+    <div class="btn-wrapper has-margin-top">
+        <a class="btn" href="{{ route('dreams.create') }}">Enviar un sueño</a>
+    </div>
 @endsection
