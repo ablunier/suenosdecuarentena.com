@@ -4,10 +4,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = yes">
 
-    <title>Sueños de cuarentena</title>
+    <title>{{ __('messages.name') }}</title>
     <meta name="description" content="@yield('description')">
 
-    <meta property="og:title" content="Sueños de cuarentena" />
+    <meta property="og:title" content="{{ __('messages.name') }}" />
     <meta property="og:url" content="{{ Request::url() }}">
     <meta name="image" content="{{ asset('img/share.jpg') }}" />
     <meta property="og:image" content="{{ asset('img/share.jpg') }}" />
@@ -16,7 +16,7 @@
     <meta property="og:type" content="website">
 
     <meta name="twitter:card" content="photo" />
-    <meta name="twitter:title" content="Sueños de cuarentena" />
+    <meta name="twitter:title" content="{{ __('messages.name') }}" />
     <meta name="twitter:image" content="{{ asset('img/share.jpg') }}" />
 
     <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('apple-icon-57x57.png') }}">
@@ -38,9 +38,9 @@
     <meta name="theme-color" content="#ffffff">
 
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
-<body>
+<body class="is-lang-{{ app()->getLocale() }}">
     <div class="wrapper">
         @section('header')
             @include('web.partials.header')

@@ -8,4 +8,5 @@ mix.styles([
 ], 'public/css/app.css')
     .options({
         processCssUrls: false
-    });
+    })
+    .version();

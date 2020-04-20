@@ -9,7 +9,7 @@
         @if ($dream->owner_name)
             <span class="dream-author">{{ $dream->owner_name }}</span>
         @else
-            <span class="dream-author">Anónima/o</span>
+            <span class="dream-author">Anónimo</span>
         @endif
 
         <div class="dream-body">

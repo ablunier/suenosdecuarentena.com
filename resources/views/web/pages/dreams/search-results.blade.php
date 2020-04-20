@@ -1,6 +1,6 @@
 @extends('web.layouts.master')
 
-@section('description', 'Banco de sueños confinados')
+@section('description', __('messages.description'))
 
 @section('header')
     @include('web.partials.header-simple')
@@ -20,7 +20,7 @@
                     @endforeach
                 </ul>
             @else
-                <p>No hay sueños de lo que buscas, ¡quizá deberías compartir el tuyo!</p>
+                <p>{{ __('messages.no-results') }}</p>
             @endif
         </section>
 
@@ -34,6 +34,6 @@
     <img class="img-responsive fadeIn wow img-main has-margin-top" src="{{ asset('img/suenosdecuarentena.png') }}">
 
     <div class="btn-wrapper has-margin-top">
-        <a class="btn" href="{{ route('dreams.create') }}">Enviar un sueño</a>
+        <a class="btn" href="{{ route('dreams.create') }}">{{ __('messages.send-dream') }}</a>
     </div>
 @endsection

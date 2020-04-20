@@ -126,6 +126,10 @@ ul {
     outline: none;
 }
 
+.is-lang-gl .site-logo {
+    background:url('../img/logo-gl.svg') no-repeat;
+}
+
 /* ------ml-form---------*/
 
 
@@ -447,6 +451,10 @@ ul {
         width: 270px;
         height: 100px;
         cursor: pointer;
+    }
+
+    .is-lang-gl .site-logo {
+        background:url('../img/logo-lg-gl.svg') no-repeat;
     }
 }
 

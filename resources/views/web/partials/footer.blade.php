@@ -6,7 +6,7 @@
             </div>
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <ul class="menu-list-footer">
-                    <li><a href="{{ route('about') }}">Qué es</a></li>
+                    <li><a href="{{ route('about') }}">{{ __('messages.about') }}</a></li>
                     <li><a href="">Ver en galego</a></li>
                 </ul>
             </div>
@@ -14,7 +14,8 @@
 
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-                <p class="credits">"Sueños de cuarentena" fue creado en confinamiento por <a href="#" target="_blank">Adrián P. Blunier</a> y <a href="http://aymaraghiglione.com/" target="_blank">Aymará Ghiglione</a>.</p>
+                <p class="credits">
+                    {{ __('messages.credits') }} <a href="https://laboratorio.numax.org" target="_blank">Adrián P. Blunier</a> {{ __('messages.and') }} <a href="http://aymaraghiglione.com/" target="_blank">Aymará Ghiglione</a>.</p>
             </div>
         </div>
     </div>

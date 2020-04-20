@@ -1,6 +1,6 @@
 @extends('web.layouts.master')
 
-@section('description', 'Banco de sueños confinados')
+@section('description', __('messages.description'))
 
 @section('header')
     @include('web.partials.header-simple')

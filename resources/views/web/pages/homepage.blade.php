@@ -1,6 +1,6 @@
 @extends('web.layouts.master')
 
-@section('description', 'Banco de sueños confinados')
+@section('description', __('messages.description'))
 
 @section('content')
     @include('web.partials.search-form')
