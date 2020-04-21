@@ -64,7 +64,8 @@ class Dream extends Resource
             Boolean::make('Reviewed'),
             Boolean::make('Published'),
             DateTime::make('Created At')
-                ->readonly(),
+                ->readonly()
+                ->hideFromIndex(),
             BelongsTo::make('Location')
                 ->rules('required'),
         ];
