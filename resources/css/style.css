@@ -404,6 +404,7 @@ ul {
 
 .pagination-list li {
     display: inline-block;
+    margin-bottom: 0.5rem;
 }
 
 .pagination-list li a,

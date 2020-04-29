@@ -3,13 +3,13 @@
         <ul class="pagination-list">
             {{-- Previous Page Link --}}
             @if ($paginator->onFirstPage())
-                <li class="previous disabled" aria-disabled="true" aria-label="@lang('pagination.previous')">
-                    <span>@lang('pagination.previous')</span>
+                <li class="previous disabled" aria-disabled="true" aria-label="@lang('pagination.newer')">
+                    <span>@lang('pagination.newer')</span>
                 </li>
             @else
                 <li>
-                    <a class="previous" href="{{ $paginator->previousPageUrl() }}" rel="prev" aria-label="@lang('pagination.previous')">
-                        @lang('pagination.previous')
+                    <a class="previous" href="{{ $paginator->previousPageUrl() }}" rel="prev" aria-label="@lang('pagination.newer')">
+                        @lang('pagination.newer')
                     </a>
                 </li>
             @endif
@@ -36,13 +36,13 @@
             {{-- Next Page Link --}}
             @if ($paginator->hasMorePages())
                 <li>
-                    <a class="next" href="{{ $paginator->nextPageUrl() }}" rel="next" aria-label="@lang('pagination.next')">
-                        @lang('pagination.next')
+                    <a class="next" href="{{ $paginator->nextPageUrl() }}" rel="next" aria-label="@lang('pagination.older')">
+                        @lang('pagination.older')
                     </a>
                 </li>
             @else
-                <li class="next disabled" aria-disabled="true" aria-label="@lang('pagination.next')">
-                    <span>@lang('pagination.next')</span>
+                <li class="next disabled" aria-disabled="true" aria-label="@lang('pagination.older')">
+                    <span>@lang('pagination.older')</span>
                 </li>
             @endif
         </ul>
