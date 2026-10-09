@@ -24,7 +24,7 @@ deno task build   # build the site into _site/
 | `_data/i18n.json` | Interface strings and URLs for each language |
 | `dreams.page.ts` | Generates every page that shows dreams, in both languages |
 | `_includes/` | Vento layouts and partials |
-| `es/`, `gl/` | The hand-written pages: about and send a dream |
+| `es/`, `gl/` | The hand-written pages: about and the notice that sending dreams is closed |
 | `index.vto` | `/`, which redirects to `/es/` or `/gl/` by browser language |
 | `assets/` | CSS, JavaScript and images, copied as they are |
 
@@ -53,4 +53,4 @@ Add an entry to `_data/dreams.json`:
 
 ## Sending dreams
 
-The forms at `/es/enviar/` and `/gl/enviar/` still post to `/{lang}/enviar/validar`, the endpoint of the Laravel application. The static site has nothing listening there, so submissions do not work until the forms point at a form service or another backend.
+Sending dreams is closed: the site is a bank of dreams collected during the covid lockdown. `/es/enviar/` and `/gl/enviar/` no longer hold a form, only a notice explaining this, so the "send a dream" buttons across the site lead there.
