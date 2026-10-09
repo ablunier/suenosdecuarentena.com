@@ -1,0 +1,20 @@
+---
+url: /
+---
+{{# The old site redirected / to /es or /gl depending on the browser's language #}}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>{{ i18n.es.title }}</title>
+    <link rel="canonical" href="{{ i18n.es.home |> url(true) }}">
+    <script>
+        var gl = (navigator.languages || [navigator.language]).some(function (l) { return /^gl\b/i.test(l); });
+        location.replace(gl ? "{{ i18n.gl.home }}" : "{{ i18n.es.home }}");
+    </script>
+    <noscript><meta http-equiv="refresh" content="0; url={{ i18n.es.home }}"></noscript>
+</head>
+<body>
+    <a href="{{ i18n.es.home }}">{{ i18n.es.title }}</a> · <a href="{{ i18n.gl.home }}">{{ i18n.gl.title }}</a>
+</body>
+</html>

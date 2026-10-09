@@ -1,0 +1,17 @@
+<article class="at-dream fadeIn wow">
+    <a href="{{ dream.url }}">
+        <time class="dream-date" datetime="{{ dream.date }} 00:00:00">
+            {{ dream.dateText }}
+        </time>
+        {{ if dream.place }}
+        <span class="dream-place">{{ dream.place |> escape }}</span>
+        {{ /if }}
+        {{ if dream.author }}
+        <span class="dream-author">{{ dream.author |> escape }}</span>
+        {{ /if }}
+
+        <div class="dream-body">
+            <div>{{ dream.body }}</div>
+        </div>
+    </a>
+</article>
