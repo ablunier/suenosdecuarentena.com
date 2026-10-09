@@ -5,6 +5,7 @@ const site = lume({
   location: new URL("https://suenosdecuarentena.com"),
 });
 
+site.ignore("README.md");
 site.add("assets");
 site.use(sitemap());
 
