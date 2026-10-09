@@ -17,8 +17,21 @@
     "older": "Más antiguo",
     "showing": "Mostrando sueños sobre",
     "noResults": "No hay sueños de lo que buscas, ¡quizá deberías compartir el tuyo!",
-    "credits": "\"Sueños de cuarentena\" fue creado en confinamiento por <a href=\"https://laboratorio.numax.org\" target=\"_blank\">Adrián P. Blunier</a> y <a href=\"http://aymaraghiglione.com/\" target=\"_blank\">Aymará Ghiglione</a>.",
-    "months": ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
+    "credits": "\"Sueños de cuarentena\" fue creado en confinamiento por <a href=\"https://adrianp.blunier.me\" target=\"_blank\">Adrián P. Blunier</a> y <a href=\"http://aymaraghiglione.com/\" target=\"_blank\">Aymará Ghiglione</a>.",
+    "months": [
+      "enero",
+      "febrero",
+      "marzo",
+      "abril",
+      "mayo",
+      "junio",
+      "julio",
+      "agosto",
+      "septiembre",
+      "octubre",
+      "noviembre",
+      "diciembre"
+    ]
   },
   "gl": {
     "title": "Soños de corentena",
@@ -38,7 +51,20 @@
     "older": "Máis antigo",
     "showing": "Mostrando soños sobre",
     "noResults": "Non hai soños do que buscas, se cadra deberías compartir o teu!",
-    "credits": "\"Soños de corentena\" foi creado en confinamento por <a href=\"https://laboratorio.numax.org\" target=\"_blank\">Adrián P. Blunier</a> e <a href=\"http://aymaraghiglione.com/\" target=\"_blank\">Aymará Ghiglione</a>.",
-    "months": ["xaneiro", "febreiro", "marzo", "abril", "maio", "xuño", "xullo", "agosto", "setembro", "outubro", "novembro", "decembro"]
+    "credits": "\"Soños de corentena\" foi creado en confinamento por <a href=\"https://adrianp.blunier.me\" target=\"_blank\">Adrián P. Blunier</a> e <a href=\"http://aymaraghiglione.com/\" target=\"_blank\">Aymará Ghiglione</a>.",
+    "months": [
+      "xaneiro",
+      "febreiro",
+      "marzo",
+      "abril",
+      "maio",
+      "xuño",
+      "xullo",
+      "agosto",
+      "setembro",
+      "outubro",
+      "novembro",
+      "decembro"
+    ]
   }
 }
