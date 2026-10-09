@@ -15,6 +15,10 @@ deno task serve   # development server at http://localhost:3000, rebuilds on cha
 deno task build   # build the site into _site/
 ```
 
+## Deployment
+
+The site is hosted on GitHub Pages. Every push to `main` runs `.github/workflows/deploy.yml`, which builds the site and publishes `_site/`. The workflow can also be run by hand from the Actions tab.
+
 ## Structure
 
 | Path | Contents |
