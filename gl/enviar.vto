@@ -1,0 +1,42 @@
+---
+title: Soños de corentena
+description: Banco de soños confinados
+layout: layouts/base.vto
+url: /gl/enviar/
+alternate: /es/enviar/
+---
+<article class="form-send-article">
+        <div class="row">
+            <form method="post" action="/gl/enviar/validar" class="form-send col-md-12 col-sm-12 col-xs-12">
+                
+                <div class="form-group">
+                    <label for="owner-name">O teu nome ou o do teu eu soñador (se queres compartilo)</label>
+                    <input type="text" name="owner_name" class="form-control" id="owner-name-input">
+                </div>
+
+                <div class="form-group">
+                    <label for="location-input">Localidade, cidade ou país onde estás confinadx</label>
+                    <input type="text" name="location" class="form-control" id="location-input" required="">
+                </div>
+
+                <div class="form-group">
+                    <label for="date-input">Data aproximada, aquí todxs perdemos a noción do tempo</label>
+                    <input type="date" name="date" class="form-control" id="date-input" required="">
+                </div>
+
+                <div class="form-group">
+                    <label for="description-textarea">A ver, que soñaches?</label>
+                    <textarea name="description" class="form-control" id="description-textarea" required=""></textarea>
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" name="legal" class="form-check-input" id="legal-input" required="">
+                    <label class="form-check-label" for="legal-input">Acepto as seguintes condicións de tratamento dos datos que envío</label>
+                </div>
+
+                <p></p><div>Todo o contido enviado a través deste formulario non será compartido con terceiros e só será tratado por Adrián Pardellas Blunier e Aymará Ghiglione ("Soños de corentena"). A súa finalidade é ser publicado neste banco de soños e a información será revisada para anonimizar os datos compartidos. "Soños de corentena" resérvase o dereito de publicación nesta web da información enviada. Ao enviar este formulario aceptas ceder esta información para ser publicada nesta páxina web e en futuras publicacións.</div><p></p>
+
+                <button type="submit" class="btn">Enviar un soño</button>
+            </form>
+        </div>
+    </article>

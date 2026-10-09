@@ -1,0 +1,67 @@
+---
+layout: layouts/base.vto
+homeHeader: true
+---
+{{ set t = i18n[lang] }}
+{{ if pagination.page == 1 }}
+{{# The old site paginated with ?page=N; send those addresses to the new pages #}}
+<script>
+    (function () {
+        var n = parseInt(new URLSearchParams(location.search).get("page"), 10);
+        if (n > 1 && n <= {{ pagination.totalPages }}) location.replace("{{ t.home }}page/" + n + "/");
+    })();
+</script>
+{{ /if }}
+<div class="ml-form-wrapper row">
+    {{ include "search-bar.vto" }}
+</div>
+
+<div class="row">
+    <section class="ml-dreams-list col-md-12 col-sm-12 col-xs-12">
+        <ul class="dreams-list">
+            {{ for dream of results }}
+            <li>
+                {{ include "dream-card.vto" { dream } }}
+            </li>
+            {{ /for }}
+        </ul>
+    </section>
+
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <nav class="pagination-wrapper">
+            <ul class="pagination-list">
+                {{ if pagination.previous }}
+                <li>
+                    <a class="previous" href="{{ pagination.previous }}" rel="prev" aria-label="{{ t.newer }}">
+                        {{ t.newer }}
+                    </a>
+                </li>
+                {{ else }}
+                <li class="previous disabled" aria-disabled="true" aria-label="{{ t.newer }}">
+                    <span>{{ t.newer }}</span>
+                </li>
+                {{ /if }}
+
+                {{ for n of pageUrls.keys() }}
+                {{ if n + 1 == pagination.page }}
+                <li class="active" aria-current="page"><span>{{ n + 1 }}</span></li>
+                {{ else }}
+                <li><a href="{{ pageUrls[n] }}">{{ n + 1 }}</a></li>
+                {{ /if }}
+                {{ /for }}
+
+                {{ if pagination.next }}
+                <li>
+                    <a class="next" href="{{ pagination.next }}" rel="next" aria-label="{{ t.older }}">
+                        {{ t.older }}
+                    </a>
+                </li>
+                {{ else }}
+                <li class="next disabled" aria-disabled="true" aria-label="{{ t.older }}">
+                    <span>{{ t.older }}</span>
+                </li>
+                {{ /if }}
+            </ul>
+        </nav>
+    </div>
+</div>

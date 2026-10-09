@@ -1,0 +1,29 @@
+---
+layout: layouts/base.vto
+---
+{{ set t = i18n[lang] }}
+<article class="ml-dream">
+    <time class="dream-date" datetime="{{ dream.date }} 00:00:00">
+        {{ dream.dateText }}
+    </time>
+    {{ if dream.place }}
+    <span class="dream-place">{{ dream.place |> escape }}</span>
+    {{ /if }}
+    {{ if dream.author }}
+    <span class="dream-author">{{ dream.author |> escape }}</span>
+    {{ /if }}
+
+    <div class="dream-body">
+        <div>{{ dream.body }}</div>
+    </div>
+</article>
+
+<div class="ml-form-wrapper row">
+    {{ include "search-bar.vto" }}
+</div>
+
+<img class="img-responsive fadeIn wow img-main has-margin-top" src="/assets/img/suenosdecuarentena.png">
+
+<div class="btn-wrapper has-margin-top">
+    <a class="btn" href="{{ t.sendUrl }}">{{ t.send }}</a>
+</div>

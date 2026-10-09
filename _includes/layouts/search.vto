@@ -1,0 +1,55 @@
+---
+layout: layouts/base.vto
+---
+{{ set t = i18n[lang] }}
+<div class="ml-form-wrapper row">
+    {{ include "search-bar.vto" }}
+
+    <div class="col-md-12 col-sm-12 col-xs-12" id="search-reset" hidden>
+        <div class="link-reset-wrapper">
+            <a href="{{ t.home }}" class="link-reset">{{ t.showing }} "<span id="search-term" style="all: unset"></span>"<span>x</span></a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <section class="ml-dreams-list col-md-12 col-sm-12 col-xs-12">
+        <ul class="dreams-list">
+            {{ for dream of results }}
+            <li>
+                {{ include "dream-card.vto" { dream } }}
+            </li>
+            {{ /for }}
+        </ul>
+        <p id="search-empty" hidden>{{ t.noResults }}</p>
+    </section>
+</div>
+
+{{# The search ran on the server; now every dream is in the page and this filters them #}}
+<script>
+    (function () {
+        var q = (new URLSearchParams(location.search).get("q") || "").trim();
+        if (!q) return;
+        var fold = function (s) {
+            return s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+        };
+        var term = fold(q), found = 0;
+        document.querySelectorAll(".dreams-list > li").forEach(function (li) {
+            if (fold(li.textContent).indexOf(term) === -1) li.remove();
+            else found++;
+        });
+        document.querySelector(".search-input").value = q;
+        document.getElementById("search-term").textContent = q;
+        document.getElementById("search-reset").hidden = false;
+        if (!found) {
+            document.querySelector(".dreams-list").remove();
+            document.getElementById("search-empty").hidden = false;
+        }
+    })();
+</script>
+
+<img class="img-responsive fadeIn wow img-main has-margin-top" src="/assets/img/suenosdecuarentena.png">
+
+<div class="btn-wrapper has-margin-top">
+    <a class="btn" href="{{ t.sendUrl }}">{{ t.send }}</a>
+</div>

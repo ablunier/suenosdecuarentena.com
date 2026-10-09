@@ -1,0 +1,99 @@
+{{ set t = i18n[lang] }}
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = yes">
+
+    <title>{{ t.title }}</title>
+    <meta name="description" content="{{ description || t.description |> escape }}">
+
+    <meta property="og:title" content="{{ t.title }}">
+    <meta property="og:url" content="{{ url |> url(true) }}">
+    <meta name="image" content="{{ t.shareImage |> url(true) }}">
+    <meta property="og:image" content="{{ t.shareImage |> url(true) }}">
+    <meta property="og:description" content="{{ description || t.description |> escape }}">
+    <link rel="image_src" href="{{ t.shareImage |> url(true) }}">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="photo">
+    <meta name="twitter:title" content="{{ t.title }}">
+    <meta name="twitter:image" content="{{ t.shareImage |> url(true) }}">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+    <link rel="manifest" href="/assets/img/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/assets/img/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/app.css">
+</head>
+<body class="is-lang-{{ lang }}">
+    <div class="wrapper">
+        <header class="header-main bounceInDown wow">
+            <a href="{{ t.home }}">
+                <h1 class="site-logo image">{{ t.title }}</h1>
+            </a>
+            {{ if homeHeader }}
+
+            <div class="btn-wrapper">
+                <a class="btn" href="{{ t.sendUrl }}">{{ t.send }}</a>
+            </div>
+
+            <img class="img-responsive fadeIn wow img-main" src="/assets/img/suenosdecuarentena.png">
+            {{ /if }}
+        </header>
+
+        <main>
+            {{ content }}
+        </main>
+    </div>
+
+    <footer class="footer-main">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <img class="img-responsive logo-footer" src="/assets/img/logo-sm.svg">
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <ul class="menu-list-footer">
+                        <li><a href="{{ t.aboutUrl }}">{{ t.about }}</a></li>
+                        <li>
+                            <a href="{{ alternate || i18n[lang == "es" ? "gl" : "es"].home }}">
+                                {{ t.otherLanguage }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <p class="credits">
+                        {{ t.credits }}</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="/assets/js/modernizr.custom.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="/assets/js/wow.min.js"></script>
+    <script type="text/javascript">
+        new WOW().init();
+    </script>
+</body>
+</html>
